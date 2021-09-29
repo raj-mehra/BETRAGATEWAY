@@ -25,7 +25,7 @@ namespace BETRAGATEWAY.Controllers
             _logger = logger;
         }
 
-        [HttpGet]
+        [HttpPost]
         public string GateAction(Gate gate)
         {
             var rng = new Random();

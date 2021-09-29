@@ -11,25 +11,37 @@ namespace BETRAGATEWAY.Models
         public string Id { get; set; }
 
         [Required]
-        public byte FunctionOption;
+        public byte FunctionOption { get; set; }
 
         [Required]
-        public int Index;
+        public int Index { get; set; }
 
         [Required]
-        public string Name;
+        public string Name { get; set; }
 
         [Required]
-        public string Pin;
+        public string Pin { get; set; }
 
         [Required]
-        public int CardNo;
+        public int CardNo { get; set; }
 
         [Required]
-        public byte TZ1, TZ2, TZ3, TZ4, Status;
+        public byte TZ1 { get; set; }
+
+        [Required]
+        public byte TZ2 { get; set; }
+
+        [Required] 
+        public byte TZ3 { get; set; }
+
+        [Required] 
+        public byte TZ4 { get; set; }
+
+        [Required] 
+        public byte Status { get; set; }
 
         [Required]
         [DataType(DataType.Time)]
-        public DateTime EndTime;
+        public DateTime EndTime { get; set; }
     }
 }
