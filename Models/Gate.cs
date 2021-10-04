@@ -20,7 +20,7 @@ namespace BETRAGATEWAY.Models
         [Required]
         public bool GateOpen { get; set; }
 
-        [Required]
-        public ICollection<Card> Cards { get; set; }
+        /*[Required]
+        public ICollection<Card> Cards { get; set; }*/
     }
 }
