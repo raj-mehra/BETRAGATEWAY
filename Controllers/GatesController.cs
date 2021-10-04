@@ -37,7 +37,7 @@ namespace BETRAGATEWAY.Controllers
                 re = TCPController.OpenDoor(true, (byte)0);
                 Console.Out.WriteLine("Action", TCPController.CmdResult());
             }
-            return "Successful" + rng;
+            return "Successful >>>>>>>>>>" + TCPController?.CmdResult() + " .......Type >>>>>>>>" +TCPController.GetType();
         }
     }
 }
