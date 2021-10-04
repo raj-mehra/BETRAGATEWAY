@@ -48,6 +48,9 @@ namespace BETRAGATEWAY
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "BETRAGATEWAY v1"));
+            } else
+            {
+                app.UseHsts();
             }
 
             app.UseHttpsRedirection();

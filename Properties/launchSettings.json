@@ -12,8 +12,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": false,
-      // "launchUrl": "swagger",
-      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
+      "launchUrl": "swagger",
       "publishAllPorts": true,
       "useSSL": true,
       "environmentVariables": {
