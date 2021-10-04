@@ -12,6 +12,8 @@ using Microsoft.Extensions.Logging;
 namespace BETRAGATEWAY.Controllers
 {
     using TcpStandard_Server;
+    using TcpStandard_Server.StandTcpController;
+
     [ApiController]
     [Route("[controller]")]
     public class GatesController : ControllerBase
@@ -29,15 +31,17 @@ namespace BETRAGATEWAY.Controllers
         public string GateAction(Gate gate)
         {
             var rng = new Random();
-            TcpStandard_Server.StandTcpController.StandTCPControllerManager ControllerManager = new TcpStandard_Server.StandTcpController.StandTCPControllerManager(null);
-            TcpStandard_Server.StandTcpController.TCPController TCPController = ControllerManager.GetController(gate.ControllerId);
+
+            EventHandle eventHandle = new EventHandle();
+            StandTCPControllerManager ControllerManager = new StandTCPControllerManager(eventHandle);
+            TCPController TCPController = ControllerManager.GetController(gate.ControllerId);
             bool re = false;
             if(TCPController != null)
             {
                 re = TCPController.OpenDoor(true, (byte)0);
-                Console.Out.WriteLine("Action", TCPController.CmdResult());
+                Console.Out.WriteLine("Action >>>>>>", TCPController.CmdResult());
             }
-            return "Successful >>>>>>>>>>" + TCPController?.CmdResult() + " .......Type >>>>>>>>" +TCPController.GetType();
+            return "Successful >>>>>>>>>>" + TCPController?.CmdResult() + " .......Type >>>>>>>>" +TCPController?.GetType();
         }
     }
 }
